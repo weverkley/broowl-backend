@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "data": {
+        "id": 1,
+        "email": "wever-kley@live.com",
+        "username": "weverkley",
+        "password": "4qUrpzQ6",
+        "created_at": "2019-10-11T20:54:33.000000Z",
+        "admin": null,
+        "active": null
+    },
+    "message": "User created successfully"
+}
