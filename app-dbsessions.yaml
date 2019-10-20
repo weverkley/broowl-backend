@@ -1,0 +1,20 @@
+# Use the PHP 7.3 runtime (BETA) by replacing "php72" below with "php73"
+runtime: php72
+
+env_variables:
+  ## Put production environment variables here.
+  APP_KEY: base64:CfjS+71On8G0ueuupGBu/e9CwWETWaB7EdebPlYIHLk=
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  ## Set these environment variables according to your CloudSQL configuration.
+  DB_DATABASE: broowl
+  DB_USERNAME: root
+  DB_PASSWORD: 3ExfO4685u0g84Li
+  DB_SOCKET: "/cloudsql/broowl:us-central1:broowl"
+
+  ## To use Stackdriver logging in your Laravel application, copy
+  ## "app/Logging/CreateStackdriverLogger.php" and "config/logging.php"
+  ## into your Laravel application. Then uncomment the following line:
+  LOG_CHANNEL: stackdriver
