@@ -12,11 +12,16 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'content', 'channel_id'
+        'content', 'url', 'channel_id', 'type'
     ];
 
     public function channel()
     {
         return $this->belongsTo(Channel::class);
+    }
+
+    public function options()
+    {
+        return $this->hasMany(Poll::class);
     }
 }

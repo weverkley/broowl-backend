@@ -22,7 +22,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'API'], function () {
 
     Route::group(['prefix' => 'user'], function () {
         // Route::post('', 'UserController@store');
-        // Route::get('', 'UserController@index');
+        Route::get('', 'UserController@index');
         Route::get('/{id}', 'UserController@show');
         Route::put('/{id}', 'UserController@update');
         Route::post('/upload/profile', 'UserController@uploadProfile');

@@ -17,7 +17,8 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('channel_id')->unsigned();
             $table->text('content')->nullable();
-            $table->enum('type', ['TEXT', 'IMAGE', 'VIDEO']);
+            $table->text('url')->nullable();
+            $table->enum('type', ['TEXT', 'IMAGE', 'VIDEO', 'POLL']);
             $table->timestamps();
 
             $table->foreign('channel_id')->references('id')->on('channels')->onDelete('cascade');

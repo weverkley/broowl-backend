@@ -79,7 +79,7 @@ class ChannelController extends BaseController
 
     public function getPosts($id)
     {
-        return $this->sendResponse(Channel::with('posts')->find($id));
+        return $this->sendResponse(Channel::with('posts.options')->find($id));
     }
 
     public function uploadCover(Request $request)

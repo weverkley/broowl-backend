@@ -1,15 +1,36 @@
 # Use the PHP 7.3 runtime (BETA) by replacing "php72" below with "php73"
+service: default
 runtime: php73
+
+runtime_config:
+  document_root: public
 
 env_variables:
   ## Put production environment variables here.
+  APP_ENV: local   # or production
+  APP_DEBUG : true # or false
   APP_KEY: base64:CfjS+71On8G0ueuupGBu/e9CwWETWaB7EdebPlYIHLk=
+
+  # instead of putting the cache in the database I recommend using redis
   APP_STORAGE: /tmp
   VIEW_COMPILED_PATH: /tmp
-  SESSION_DRIVER: cookie
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  BROADCAST_DRIVER: log
+  QUEUE_CONNECTION: sync
+  SESSION_LIFETIME: 120
 
   ## To use Stackdriver logging in your Laravel application, copy
   ## "app/Logging/CreateStackdriverLogger.php" and "config/logging.php"
   ## into your Laravel application. Then uncomment the following line:
   LOG_CHANNEL: stackdriver
 
+  MAIL_DRIVER: smtp
+  MAIL_HOST: smtp.mailtrap.io
+  MAIL_PORT: 2525
+  MAIL_USERNAME: null
+  MAIL_PASSWORD: null
+  MAIL_ENCRYPTION: null
+
+  GOOGLE_CLOUD_PROJECT: "1047795118686"
+  GOOGLE_APPLICATION_CREDENTIALS: ""
